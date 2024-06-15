@@ -1,0 +1,29 @@
+/* src/assets/styles/BottomNavbar.css */
+.bottom-navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #282c34;
+  padding: 10px 0;
+  box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-item span {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.nav-item.active {
+  color: #61dafb;
+}
