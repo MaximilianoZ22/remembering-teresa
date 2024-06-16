@@ -1,16 +1,13 @@
 {
   "files": {
     "main.css": "/remembering-teresa/static/css/main.170f1bfc.css",
-    "main.js": "/remembering-teresa/static/js/main.01ecca16.js",
-    "static/media/tsotuyo-desktop.mp4": "/remembering-teresa/static/media/tsotuyo-desktop.336c1cf10aba78ea7419.mp4",
-    "static/media/tsotuyo-mobile.mp4": "/remembering-teresa/static/media/tsotuyo-mobile.da6d3a2177fdcf6b2312.mp4",
+    "main.js": "/remembering-teresa/static/js/main.5d45240d.js",
     "index.html": "/remembering-teresa/index.html",
-    "static/media/heart.svg": "/remembering-teresa/static/media/heart.51e94297b56e5f9a3382c432c48e676c.svg",
     "main.170f1bfc.css.map": "/remembering-teresa/static/css/main.170f1bfc.css.map",
-    "main.01ecca16.js.map": "/remembering-teresa/static/js/main.01ecca16.js.map"
+    "main.5d45240d.js.map": "/remembering-teresa/static/js/main.5d45240d.js.map"
   },
   "entrypoints": [
     "static/css/main.170f1bfc.css",
-    "static/js/main.01ecca16.js"
+    "static/js/main.5d45240d.js"
   ]
 }
