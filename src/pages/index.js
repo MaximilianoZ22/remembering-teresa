@@ -5,7 +5,6 @@ const desktopVid = `${process.env.PUBLIC_URL}/assets/tsotuyo-desktop.mp4`;
 const mobileVid = `${process.env.PUBLIC_URL}/assets/tsotuyo-mobile.mp4`;
 
 export const Home = () => {
-  console.log("DESKTOP: ", desktopVid)
   return (
     <div className="home-container">
       <video className="video-background" autoPlay loop muted>
