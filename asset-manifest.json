@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/remembering-teresa/static/css/main.170f1bfc.css",
-    "main.js": "/remembering-teresa/static/js/main.5d45240d.js",
+    "main.js": "/remembering-teresa/static/js/main.d601f532.js",
     "index.html": "/remembering-teresa/index.html",
     "main.170f1bfc.css.map": "/remembering-teresa/static/css/main.170f1bfc.css.map",
-    "main.5d45240d.js.map": "/remembering-teresa/static/js/main.5d45240d.js.map"
+    "main.d601f532.js.map": "/remembering-teresa/static/js/main.d601f532.js.map"
   },
   "entrypoints": [
     "static/css/main.170f1bfc.css",
-    "static/js/main.5d45240d.js"
+    "static/js/main.d601f532.js"
   ]
 }
