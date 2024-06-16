@@ -2,8 +2,9 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import heartImage from '../assets/heart.svg';
 import '../css/navbar.css';
+
+const heartImage = `${process.env.PUBLIC_URL}/assets/heart.svg`;
 
 export const NavbarComponent = () => {
   return (

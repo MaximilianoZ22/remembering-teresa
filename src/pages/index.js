@@ -1,8 +1,8 @@
 import React from 'react';
 import '../css/home.css';
-import desktopVid from "../assets/tsotuyo-desktop.mp4";
-import mobileVid from "../assets/tsotuyo-mobile.mp4"
-// import mobileVid from "../assets/Blue Floral In Loving Memory Tribute Video - Mobile.mp4";
+
+const desktopVid = `${process.env.PUBLIC_URL}/assets/tsotuyo-desktop.mp4`;
+const mobileVid = `${process.env.PUBLIC_URL}/assets/tsotuyo-mobile.mp4`;
 
 export const Home = () => {
   return (
