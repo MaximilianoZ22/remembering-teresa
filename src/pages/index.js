@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/home.css';
-import desktopVid from "../assets/Blue Floral In Loving Memory Tribute Video.mp4";
-import mobileVid from "../assets/Blue Floral In Loving Memory Tribute Video (Mobile Video).mp4"
+import desktopVid from "../assets/tsotuyo-desktop.mp4";
+import mobileVid from "../assets/tsotuyo-mobile.mp4"
 // import mobileVid from "../assets/Blue Floral In Loving Memory Tribute Video - Mobile.mp4";
 
 export const Home = () => {

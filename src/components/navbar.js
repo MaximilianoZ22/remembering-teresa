@@ -8,9 +8,9 @@ import '../css/navbar.css';
 export const NavbarComponent = () => {
   return (
     <>
-      <Navbar collapseOnSelect expand="sm" className="bg-body-tertiary" style={{ backgroundColor: '#A6B1E1' }}>
+      <Navbar collapseOnSelect expand="sm" className="custom-navbar playfair-display-regular">
         <Container fluid className="px-3">
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/" className="custom-navbar-brand">
             <img
               alt=""
               src={heartImage}
@@ -22,10 +22,10 @@ export const NavbarComponent = () => {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="/biography">Biography</Nav.Link>
-              <Nav.Link href="/service">Service</Nav.Link>
-              <Nav.Link href="/memories">Memories</Nav.Link>
+            <Nav className="ms-auto custom-nav ">
+              <Nav.Link href="/" className="custom-nav-link">Home</Nav.Link>
+              <Nav.Link href="/service" className="custom-nav-link">Services</Nav.Link>
+              <Nav.Link href="/memories" className="custom-nav-link">Memories</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

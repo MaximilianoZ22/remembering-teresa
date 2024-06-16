@@ -1,0 +1,48 @@
+.service-container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.date {
+  background-color: #DED1E1;
+  padding: 10px 20px; /* 10px top/bottom, 20px left/right */
+  border-radius: 5px; /* Optional: Add rounded corners */
+  font-weight: bold; /* Make the text bold */
+  font-size: 20px;
+}
+
+@media (min-width: 576px) {
+  .service-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+  .service-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .service-container {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .service-container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.service-info-card {
+  font-size: 20px;
+}
+
+.font-color-custom {
+  color: #755b91; /* Change this to your desired color */
+}

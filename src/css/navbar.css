@@ -24,6 +24,6 @@
   font-size: 12px;
 }
 
-.nav-item.active {
-  color: #61dafb;
+.custom-navbar {
+  background-color: #E4D9E7  /*#E1CCE6;  Change this to set the background color of the navbar */
 }
