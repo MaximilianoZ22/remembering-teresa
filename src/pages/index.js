@@ -6,8 +6,15 @@ const desktopPoster = `${process.env.PUBLIC_URL}/assets/tsotuyo-desktop-tn.png`;
 const mobileVid = `${process.env.PUBLIC_URL}/assets/tsotuyo-mobile-noaudio-1080.mp4`;
 const mobilePoster = `${process.env.PUBLIC_URL}/assets/tsotuyo-mobile-tn.png`;
 
+const isIOS = () => {
+  return (
+    /iPad|iPhone/.test(navigator.userAgent) && !window.MSStream
+  );
+};
+
 export const Home = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isIOSDevice, setIsIOSDevice] = useState(isIOS());
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -22,17 +29,25 @@ export const Home = () => {
 
   return (
     <div className="home-container">
-      <video
-        className="video-background"
-        muted
-        playsInline
-        autoPlay
-        loop
-        poster={isMobile ? mobilePoster : desktopPoster}
-      >
-        <source src={isMobile ? mobileVid : desktopVid} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
+      {isIOSDevice ? (
+        <img
+          src={isMobile ? mobilePoster : desktopPoster}
+          alt="Poster"
+          className="video-background"
+        />
+      ) : (
+        <video
+          className="video-background"
+          muted
+          playsInline
+          autoPlay
+          loop
+          poster={isMobile ? mobilePoster : desktopPoster}
+        >
+          <source src={isMobile ? mobileVid : desktopVid} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      )}
     </div>
   );
 }
