@@ -24,7 +24,7 @@ export const NavbarComponent = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto custom-nav ">
-              <Nav.Link href="/remembering-teresa" className="custom-nav-link">Home</Nav.Link>
+              <Nav.Link href="/" className="custom-nav-link">Home</Nav.Link>
               <Nav.Link href="#service" className="custom-nav-link">Services</Nav.Link>
               <Nav.Link href="#memories" className="custom-nav-link">Memories</Nav.Link>
             </Nav>
