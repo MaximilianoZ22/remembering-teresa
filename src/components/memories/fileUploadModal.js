@@ -12,7 +12,6 @@ const FileUploadModal = ({ show, handleClose, handleUpload }) => (
       <FileUploader
         handleChange={handleUpload}
         name="file"
-        types={["JPG", "PNG", "GIF"]}
         multiple={true}
       />
     </Modal.Body>

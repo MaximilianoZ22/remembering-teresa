@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Spinner from 'react-bootstrap/Spinner';
 import FileUploadModal from '../components/memories/fileUploadModal';
 import ImageGallery from '../components/memories/imageGallery';
 import ToastNotification from '../components/memories/toastNotification';
@@ -19,6 +20,8 @@ export const Memories = () => {
   const [isIOSDevice, setIsIOSDevice] = useState(isIOS());
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const handleResize = () => {
     setIsMobile(window.innerWidth <= 768);
@@ -39,6 +42,7 @@ export const Memories = () => {
       );
       Promise.all(fetchURLs).then((urls) => {
         setImageList(urls);
+        setIsLoading(false);
       });
     });
   }, []);
@@ -85,7 +89,15 @@ export const Memories = () => {
           </Col>
         </Row>
         <Row>
-          <ImageGallery imageList={imageList} />
+          {isLoading ? (
+            <div className="d-flex justify-content-center fade-out">
+              <Spinner animation="border" variant="primary" className="custom-spinner" />
+            </div>
+          ) : (
+            <div className={`fade-in ${imagesLoaded ? 'visible' : 'hidden'}`}>
+              <ImageGallery imageList={imageList} />
+            </div>
+          )}
         </Row>
       </Container>
       <FileUploadModal

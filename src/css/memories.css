@@ -15,3 +15,7 @@
   background-color: #a081c7; /* Change this to your desired hover color */
   border-color: #FFFFFF; /* Maintain the border color on hover */
 }
+
+.custom-spinner .spinner-border {
+  color: #755b91; /* Change this to your desired color */
+}

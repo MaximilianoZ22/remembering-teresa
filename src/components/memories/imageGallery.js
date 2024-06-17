@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
@@ -7,6 +7,7 @@ const ImageGallery = ({ imageList }) => {
   const [images, setImages] = useState([]);
   const [index, setIndex] = useState(-1);
   const [key, setKey] = useState(0);
+  const isFirstOpen = useRef(true);
 
   useEffect(() => {
     const loadImage = (url) => {
@@ -34,8 +35,9 @@ const ImageGallery = ({ imageList }) => {
   }, [imageList]);
 
   useEffect(() => {
-    if (index !== -1) {
+    if (index !== -1 && isFirstOpen.current) {
       setKey((prevKey) => prevKey + 1);
+      isFirstOpen.current = false;
     }
   }, [index]);
 
@@ -46,7 +48,10 @@ const ImageGallery = ({ imageList }) => {
   const prevImage = images[prevIndex] || currentImage;
 
   const handleClick = (index) => setIndex(index);
-  const handleClose = () => setIndex(-1);
+  const handleClose = () => {
+    setIndex(-1);
+    isFirstOpen.current = true; // Reset for the next open
+  };
   const handleMovePrev = () => setIndex(prevIndex);
   const handleMoveNext = () => setIndex(nextIndex);
 
