@@ -13,6 +13,9 @@ const FileUploadModal = ({ show, handleClose, handleUpload }) => (
         handleChange={handleUpload}
         name="file"
         multiple={true}
+        types={[
+          "JPG", "JPEG", "PNG", "GIF", "BMP", "WEBP", "HEIC", "HEIF", "TIFF", "TIF", "ICO", "SVG", "RAW", "CR2", "NEF", "ORF", "RAF", "SR2", "ARW", "DNG"
+        ]}
       />
     </Modal.Body>
     <Modal.Footer>
