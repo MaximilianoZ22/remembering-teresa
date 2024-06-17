@@ -73,7 +73,12 @@ export const Memories = () => {
             <Button
               variant="primary"
               onClick={handleShow}
-              className="rubik-regular custom-button"
+              className="rubik-regular"
+              style={{
+                backgroundColor: '#755b91',
+                borderColor: '#FFFFFF',
+                color: 'white'
+              }}
             >
               Upload Images
             </Button>
