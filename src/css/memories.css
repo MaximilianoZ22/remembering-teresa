@@ -1,0 +1,17 @@
+/* service.css */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap');
+
+.rubik-regular {
+  font-family: 'Rubik', sans-serif;
+}
+
+.custom-button {
+  background-color: #755b91;
+  border-color: #FFFFFF;
+  color: white; /* Add color to the text */
+}
+
+.custom-button:hover {
+  background-color: #a081c7; /* Change this to your desired hover color */
+  border-color: #FFFFFF; /* Maintain the border color on hover */
+}

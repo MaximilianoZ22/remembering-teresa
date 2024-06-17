@@ -9,7 +9,7 @@ import ToastNotification from '../components/memories/toastNotification';
 import { storage } from "../firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from 'uuid';
-import '../css/service.css';
+import '../css/memories.css';
 
 const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -65,15 +65,19 @@ export const Memories = () => {
   return (
     <div className='body'>
       <Container className="service-container rubik-regular">
-        <Row>
+        <Row className="justify-content-between align-items-center mb-4">
           <Col>
             <h1 style={{ fontSize: '70px', paddingLeft: "5%" }}>Memories</h1>
           </Col>
-        </Row>
-        <Row className="mb-4">
-          <Button variant="primary" onClick={handleShow}>
-            Upload Images
-          </Button>
+          <Col xs="auto">
+            <Button
+              variant="primary"
+              onClick={handleShow}
+              className="rubik-regular custom-button"
+            >
+              Upload Images
+            </Button>
+          </Col>
         </Row>
         <Row>
           <ImageGallery imageList={imageList} />
@@ -91,3 +95,5 @@ export const Memories = () => {
     </div>
   );
 };
+
+export default Memories;
