@@ -2,11 +2,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Gallery } from "react-grid-gallery";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
+import Spinner from 'react-bootstrap/Spinner';
 
 const ImageGallery = ({ imageList }) => {
   const [images, setImages] = useState([]);
   const [index, setIndex] = useState(-1);
   const [key, setKey] = useState(0);
+  const [loading, setLoading] = useState(true); // Add loading state
   const isFirstOpen = useRef(true);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const ImageGallery = ({ imageList }) => {
       const imagePromises = imageList.map((url) => loadImage(url));
       const imagesData = await Promise.all(imagePromises);
       setImages(imagesData);
+      setLoading(false); // Set loading to false when images are loaded
     };
 
     loadImages();
@@ -57,17 +60,25 @@ const ImageGallery = ({ imageList }) => {
 
   return (
     <div className="image-gallery">
-      <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
-      {!!currentImage && (
-        <Lightbox
-          key={key}
-          mainSrc={currentImage.original}
-          nextSrc={nextImage.original}
-          prevSrc={prevImage.original}
-          onCloseRequest={handleClose}
-          onMovePrevRequest={handleMovePrev}
-          onMoveNextRequest={handleMoveNext}
-        />
+      {loading ? ( // Show loading indicator if loading is true
+        <div className="d-flex justify-content-center fade-out">
+        <Spinner animation="border" variant="primary" className="custom-spinner" />
+      </div>
+      ) : (
+        <>
+          <Gallery images={images} onClick={handleClick} enableImageSelection={false} />
+          {!!currentImage && (
+            <Lightbox
+              key={key}
+              mainSrc={currentImage.original}
+              nextSrc={nextImage.original}
+              prevSrc={prevImage.original}
+              onCloseRequest={handleClose}
+              onMovePrevRequest={handleMovePrev}
+              onMoveNextRequest={handleMoveNext}
+            />
+          )}
+        </>
       )}
     </div>
   );
