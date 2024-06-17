@@ -3,17 +3,13 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import Toast from 'react-bootstrap/Toast';
-import ToastContainer from 'react-bootstrap/ToastContainer';
-import { FileUploader } from "react-drag-drop-files";
-import '../css/service.css';
+import FileUploadModal from '../components/memories/fileUploadModal';
+import ImageGallery from '../components/memories/imageGallery';
+import ToastNotification from '../components/memories/toastNotification';
 import { storage } from "../firebase";
 import { getDownloadURL, listAll, ref, uploadBytes } from "firebase/storage";
 import { v4 } from 'uuid';
-
-const desktopPoster = `${process.env.PUBLIC_URL}/assets/tsotuyo-desktop-tn.png`;
-const mobilePoster = `${process.env.PUBLIC_URL}/assets/tsotuyo-mobile-tn.png`;
+import '../css/service.css';
 
 const isIOS = () => /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
@@ -78,43 +74,20 @@ export const Memories = () => {
           <Button variant="primary" onClick={handleShow}>
             Upload Images
           </Button>
-
-          <Modal show={showModal} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Upload Images</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <FileUploader
-                handleChange={handleUpload}
-                name="file"
-                types={["JPG", "PNG", "GIF"]}
-                multiple={true}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-            </Modal.Footer>
-          </Modal>
         </Row>
         <Row>
-          {imageList.map((url, index) => (
-            <img key={index} src={url} alt="Uploaded Memory" /> // Display each image
-          ))}
+          <ImageGallery imageList={imageList} />
         </Row>
       </Container>
-
-      <ToastContainer position="bottom-end" className="p-3">
-        <Toast show={showToast} onClose={handleToastClose} delay={3000} autohide>
-          <Toast.Header>
-            <strong className="me-auto">Upload Successful</strong>
-          </Toast.Header>
-          <Toast.Body>Images have been uploaded successfully!</Toast.Body>
-        </Toast>
-      </ToastContainer>
+      <FileUploadModal
+        show={showModal}
+        handleClose={handleClose}
+        handleUpload={handleUpload}
+      />
+      <ToastNotification
+        showToast={showToast}
+        handleToastClose={handleToastClose}
+      />
     </div>
   );
 };
-
-export default Memories;
