@@ -80,7 +80,7 @@ export const Memories = () => {
                 color: 'white'
               }}
             >
-              Upload Images
+              Upload Memories
             </Button>
           </Col>
         </Row>
